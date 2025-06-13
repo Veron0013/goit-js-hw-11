@@ -4,7 +4,7 @@ import "izitoast/dist/css/iziToast.min.css";
 import * as apiTools from "./js/pixabay-api.js"
 import * as renderTools from "./js/render-functions.js"
 
-const iconPath = 'img/error.svg';
+const iconPath = '/img/error.svg';
 
 const MSG_NO_DATA = "Sorry, there are no images matching your search query. Please, try again!";
 const MSG_ERROR = "Sorry, there is error in your request. Please, try again later!";
