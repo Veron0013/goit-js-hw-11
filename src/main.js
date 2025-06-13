@@ -4,7 +4,8 @@ import "izitoast/dist/css/iziToast.min.css";
 import * as apiTools from "./js/pixabay-api.js"
 import * as renderTools from "./js/render-functions.js"
 
-const iconPath = './img/error.svg';
+const iconPath = 'img/error.svg';
+
 const MSG_NO_DATA = "Sorry, there are no images matching your search query. Please, try again!";
 const MSG_ERROR = "Sorry, there is error in your request. Please, try again later!";
 const MSG_ERROR_LENGTH = "Sorry, there is error in your request. Please, try to write more than 3 letters!";
@@ -36,9 +37,8 @@ function checkValidate(searchData) {
 	return true;
 }
 
-searchForm.addEventListener("submit", handleSubmit);
+searchForm.addEventListener("submit", (event) => {
 
-function handleSubmit(event) {
 	event.preventDefault();
 	const searchData = searchField.value.trim();
 
@@ -64,6 +64,6 @@ function handleSubmit(event) {
 			renderTools.clearGallery();
 			renderTools.hideLoader();
 		});
-}
+});
 
 
