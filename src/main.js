@@ -52,6 +52,7 @@ searchForm.addEventListener("submit", (event) => {
 	apiTools.getImagesByQuery(apiTools.params)
 		.then(dataArray => {
 			if (dataArray.length === 0) {
+				renderTools.hideLoader();
 				renderTools.clearGallery();
 				toastText(MSG_NO_DATA);
 				return;
