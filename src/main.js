@@ -60,10 +60,13 @@ searchForm.addEventListener("submit", (event) => {
 			renderTools.hideLoader();
 		})
 		.catch((e) => {
-			toastText(MSG_ERROR)
-			renderTools.clearGallery();
 			renderTools.hideLoader();
-		});
+			renderTools.clearGallery();
+			toastText(MSG_ERROR)
+		})
+		.finally(() => {
+			renderTools.hideLoader();
+		})
 });
 
 

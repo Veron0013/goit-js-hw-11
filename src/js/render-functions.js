@@ -32,30 +32,30 @@ export function hideLoader() {
 }
 
 function createGalleryMark(images) {
-	return images.map(element => {
-		return element.previewURL && element.largeImageURL && element.tags ?
+	return images.map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => {
+		return webformatURL && largeImageURL && tags ?
 			`<li class="data_list_items">
-				<a class="gallery_link" href="${element.largeImageURL}">
+				<a class="gallery_link" href="${largeImageURL}">
 					<img
-						class="_list_img"
-						src="${element.previewURL}" 
-						alt="${element.tags}"/>		
-					<ul class="_list_attr">
-						<li class="_list_attr_itm">
-							<h3 class="_list_attr_title">Likes</h3>
-							<p class="_list_attr_text">${element.likes}</p>
+						class="gallery_list_img"
+						src="${webformatURL}" 
+						alt="${tags}"/>		
+					<ul class="gallery_list_attr">
+						<li class="gallery_list_attr_itm">
+							<h3 class="gallery_list_attr_title">Likes</h3>
+							<p class="gallery_list_attr_text">${likes}</p>
 						</li>
-						<li class="_list_attr_itm">
-							<h3 class="_list_attr_title">Views</h3>
-							<p class="_list_attr_text">${element.views}</p>
+						<li class="gallery_list_attr_itm">
+							<h3 class="gallery_list_attr_title">Views</h3>
+							<p class="gallery_list_attr_text">${views}</p>
 						</li>
-						<li class="_list_attr_itm">
-							<h3 class="_list_attr_title">Comments</h3>
-							<p class="_list_attr_text">${element.comments}</p>
+						<li class="gallery_list_attr_itm">
+							<h3 class="gallery_list_attr_title">Comments</h3>
+							<p class="gallery_list_attr_text">${comments}</p>
 						</li>
-						<li class="_list_attr_itm">
-							<h3 class="_list_attr_title">Downloads</h3>
-							<p class="_list_attr_text">${element.downloads}</p>
+						<li class="gallery_list_attr_itm">
+							<h3 class="gallery_list_attr_title">Downloads</h3>
+							<p class="gallery_list_attr_text">${downloads}</p>
 						</li>
 					</ul>
 				</a>
